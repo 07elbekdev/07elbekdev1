@@ -1,6 +1,7 @@
 package org.example.configuration;
 
 import org.example.models.Student;
+import org.example.models.Course;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Environment;
 
@@ -17,8 +18,8 @@ public class Configuration {
                 .setProperty(Environment.SHOW_SQL, "true")
                 .setProperty(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL10Dialect")
                 .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Course.class)
                 .buildSessionFactory();
-        //here you should to use addAnnotated class and than it will work.
     }
 
     public static SessionFactory getsessionFactory() {
