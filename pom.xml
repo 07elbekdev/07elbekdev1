@@ -23,7 +23,7 @@
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>42.3.6</version>
+      <version>42.3.8</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -49,17 +49,5 @@
         </configuration>
       </plugin>
     </plugins>
-  </build>
-  </dependencies><build>
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <configuration>
-        <source>7</source>
-        <target>7</target>
-      </configuration>
-    </plugin>
-  </plugins>
 </build>
 </project>
