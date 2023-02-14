@@ -7,7 +7,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "president")
-@Data
 @ToString
 public class President {
     @Id

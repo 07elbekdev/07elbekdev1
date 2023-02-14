@@ -1,11 +1,9 @@
 package org.example.models;
 
-import lombok.Data;
-import lombok.ToString;
 
+import lombok.ToString;
 import javax.persistence.*;
 import javax.transaction.Transactional;
-@Data
 @ToString
 @Transactional
 @Entity
