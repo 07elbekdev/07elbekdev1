@@ -6,17 +6,14 @@ public class StudentRepoImpl implements StudentRepo {
     private static StudentRepoImpl studentRepo;
 
     @Override
-    public void save(Student student) {
-        studentRepo.save(student);
+    public void save(Student student) {studentRepo.save(student);
     }
 
     @Override
-    public Student getById(Long id) {
-        return studentRepo.getById(id);
+    public Student getById(Long id) {return studentRepo.getById(id);
     }
 
     @Override
-    public void findAll() {
-        studentRepo.findAll();
+    public void findAll() {studentRepo.findAll();
     }
 }
