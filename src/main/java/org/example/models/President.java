@@ -1,9 +1,14 @@
 package org.example.models;
 
+import lombok.Data;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "president")
+@Data
+@ToString
 public class President {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

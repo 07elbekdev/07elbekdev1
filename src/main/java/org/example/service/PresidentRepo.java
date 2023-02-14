@@ -8,4 +8,5 @@ public interface PresidentRepo {
     void save(President president);
 
     void findAll();
+    void deleteAll();
     }

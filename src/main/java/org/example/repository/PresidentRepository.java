@@ -5,6 +5,9 @@ import org.example.models.President;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.transaction.Transactional;
+
+@Transactional
 public class PresidentRepository {
     private final SessionFactory sessionfactory = Configuration.getsessionFactory();
 
@@ -24,5 +27,13 @@ public class PresidentRepository {
         try (Session session = sessionfactory.openSession()) {
             session.createQuery("select p from President p").getResultList();
         }
+    }
+    public void deleteAll(){
+        try (Session session = sessionfactory.openSession()){
+            session.beginTransaction();
+            session.createQuery("delete from President p").executeUpdate();
+            session.getTransaction().commit();
+        }
+
     }
 }
