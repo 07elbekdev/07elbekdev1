@@ -15,6 +15,7 @@ public class Company {
     private String name;
     private int age;
 
+
     public Company() {
     }
 
