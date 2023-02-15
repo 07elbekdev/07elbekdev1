@@ -1,6 +1,7 @@
-package org.example.service;
+package org.example.service.impl;
 
 import org.example.models.Student;
+import org.example.service.StudentRepo;
 
 public class StudentRepoImpl implements StudentRepo {
     private static StudentRepoImpl studentRepo;

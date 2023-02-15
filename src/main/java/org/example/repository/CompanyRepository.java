@@ -1,38 +1,38 @@
 package org.example.repository;
 
 import org.example.configuration.Configuration;
-import org.example.models.President;
+import org.example.models.Company;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import javax.transaction.Transactional;
 
 @Transactional
-public class PresidentRepository {
+public class CompanyRepository {
     private final SessionFactory sessionfactory = Configuration.getsessionFactory();
 
-    public void save(President president) {
+    public void save(Company company) {
         try (Session session = sessionfactory.openSession()) {
-            session.save(president);
+            session.save(company);
         }
     }
 
-    public President getById(Long id) {
+    public Company getById(Long id) {
         try (Session session = sessionfactory.openSession()) {
-            return session.get(President.class, id);
+            return session.get(Company.class, id);
         }
     }
 
     public void findAll() {
         try (Session session = sessionfactory.openSession()) {
-            session.createQuery("select p from President p").getResultList();
+            session.createQuery("select p from Company p").getResultList();
         }
     }
 
     public void deleteAll() {
         try (Session session = sessionfactory.openSession()) {
             session.beginTransaction();
-            session.createQuery("delete from President p").executeUpdate();
+            session.createQuery("delete from Company p").executeUpdate();
             session.getTransaction().commit();
         }
     }
