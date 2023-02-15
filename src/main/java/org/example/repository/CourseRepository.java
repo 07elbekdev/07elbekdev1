@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 
 import java.util.List;
 
-public class CourseRepo {
+public class CourseRepository {
     private static final SessionFactory connection = Configuration.getsessionFactory();
 
     public void save(Course course) {

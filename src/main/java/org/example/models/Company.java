@@ -3,6 +3,7 @@ package org.example.models;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "company")
@@ -14,12 +15,16 @@ public class Company {
     @Column(name = "company_Name")
     private String name;
     private int age;
+    @OneToOne(fetch = FetchType.EAGER)
+    private President president;
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Course> course;
+
 
     public Company() {
     }
 
-    public Company(Long id, String name, int age) {
-        this.id = id;
+    public Company(String name, int age) {
         this.name = name;
         this.age = age;
     }
