@@ -1,6 +1,5 @@
 package org.example.models;
 
-import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -9,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "president")
 @ToString
 public class President {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,4 +25,3 @@ public class President {
         this.age = age;
     }
 }
-

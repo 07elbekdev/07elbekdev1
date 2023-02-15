@@ -34,6 +34,5 @@ public class PresidentRepository {
             session.createQuery("delete from President p").executeUpdate();
             session.getTransaction().commit();
         }
-
     }
 }
