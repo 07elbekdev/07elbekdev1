@@ -1,11 +1,10 @@
 package org.example.service;
 
 import org.example.models.Course;
-import org.example.repository.CourseRepo;
 
 import java.util.List;
 
-public interface CourseRepository {
+public interface CourseRepo {
     void save(Course course);
 
     Course getById(Long id);
