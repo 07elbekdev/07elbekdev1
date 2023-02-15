@@ -35,6 +35,5 @@ public class App {
         student1.setCourse(course);
 
         PresidentRepository presidentRepository = new PresidentRepository();
-        
     }
 }

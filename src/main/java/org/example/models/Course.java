@@ -24,7 +24,7 @@ public class Course {
     private int employeeAge;
     @ManyToOne(fetch = FetchType.EAGER)
     private Company company;
-    @OneToMany(mappedBy = "course",fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "course")
     private List<Student> student;
 
     public Course() {
