@@ -18,8 +18,7 @@ public class Company {
     public Company() {
     }
 
-    public Company(Long id, String name, int age) {
-        this.id = id;
+    public Company(String name, int age) {
         this.name = name;
         this.age = age;
     }

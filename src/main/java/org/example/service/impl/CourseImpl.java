@@ -1,10 +1,10 @@
 package org.example.service.impl;
 import org.example.models.Course;
-import org.example.service.CourseRepository;
+import org.example.service.CourseRepo;
 
 import java.util.List;
 
-public class CourseImpl implements CourseRepository {
+public class CourseImpl implements CourseRepo {
     private static CourseImpl courses;
 
     @Override
