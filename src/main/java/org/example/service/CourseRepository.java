@@ -1,4 +1,4 @@
-package org.example.servise;
+package org.example.service;
 
 import org.example.models.Course;
 import org.example.repository.CourseRepo;

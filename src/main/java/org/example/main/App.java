@@ -1,4 +1,4 @@
-package org.example;
+package org.example.main;
 
 import org.example.models.President;
 import org.example.repository.PresidentRepository;

@@ -1,25 +1,24 @@
 package org.example.models;
 
-import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "president")
+@Table(name = "company")
 @ToString
-public class President {
+public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column(name = "company_Name")
     private String name;
     private int age;
 
-    public President() {
+    public Company() {
     }
 
-    public President(Long id, String name, int age) {
+    public Company(Long id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;

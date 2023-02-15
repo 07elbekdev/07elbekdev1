@@ -1,6 +1,7 @@
-package org.example.service;
+package org.example.service.impl;
 
 import org.example.models.President;
+import org.example.service.PresidentRepo;
 
 
 public class PresidentRepolmpl implements PresidentRepo {

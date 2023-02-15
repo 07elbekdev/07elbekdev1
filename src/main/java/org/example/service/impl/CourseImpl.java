@@ -1,5 +1,7 @@
-package org.example.servise;
+package org.example.service.impl;
 import org.example.models.Course;
+import org.example.service.CourseRepository;
+
 import java.util.List;
 
 public class CourseImpl implements CourseRepository {
