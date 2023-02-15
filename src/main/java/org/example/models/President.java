@@ -16,6 +16,9 @@ public class President {
     private String name;
     private int age;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Company company;
+
     public President() {
     }
 
