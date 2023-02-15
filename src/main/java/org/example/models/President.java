@@ -1,11 +1,13 @@
 package org.example.models;
 
+import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "president")
+@Data
 @ToString
 public class President {
 
@@ -16,7 +18,7 @@ public class President {
     private String name;
     private int age;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "president",cascade = CascadeType.ALL)
     private Company company;
 
     public President() {

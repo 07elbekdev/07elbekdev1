@@ -3,6 +3,7 @@ package org.example.models;
 
 import lombok.Data;
 import lombok.ToString;
+
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -23,26 +24,18 @@ public class Course {
     private int employeeAge;
     @ManyToOne(fetch = FetchType.EAGER)
     private Company company;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "course",fetch = FetchType.LAZY)
     private List<Student> student;
 
     public Course() {
     }
 
-    public Course(String directorName, int directorAge, String employeeName, int employeeAge, Company company, List<Student> student) {
+    public Course(String directorName, int directorAge, String employeeName, int employeeAge) {
         this.directorName = directorName;
         this.directorAge = directorAge;
         this.employeeName = employeeName;
         this.employeeAge = employeeAge;
-        this.company = company;
-        this.student = student;
+//        this.company = company;
+//        this.student = student;
     }
-
-    //
-//    public Course(String directorName, int directorAge, String employeeName, int employeeAge) {
-//        DirectorName = directorName;
-//        this.directorAge = directorAge;
-//        this.employeeName = employeeName;
-//        this.employeeAge = employeeAge;
-//    }
 }
