@@ -18,7 +18,7 @@ public class President {
     private String name;
     private int age;
 
-    @OneToOne(mappedBy = "president",cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Company company;
 
     public President() {

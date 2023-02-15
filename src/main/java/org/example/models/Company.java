@@ -17,9 +17,9 @@ public class Company {
     @Column(name = "company_Name")
     private String name;
     private int age;
-    @OneToOne(mappedBy = "company")
+    @OneToOne(cascade = CascadeType.ALL)
     private President president;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Course> course;
 
 
