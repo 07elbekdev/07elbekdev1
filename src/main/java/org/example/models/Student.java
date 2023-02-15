@@ -3,9 +3,11 @@ package org.example.models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "student")
+@Data
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +15,9 @@ public class Student {
     @Column(name = "student_Name")
     private String name;
     private int age;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Course course;
 
     public Student() {
     }
