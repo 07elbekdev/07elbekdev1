@@ -17,4 +17,9 @@ public class StudentRepoImpl implements StudentRepo {
     @Override
     public void findAll() {studentRepo.findAll();
     }
+
+    @Override
+    public void deleteBId(Long id) {
+        studentRepo.deleteBId(id);
+    }
 }

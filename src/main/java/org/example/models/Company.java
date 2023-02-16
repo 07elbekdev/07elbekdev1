@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Table(name = "company")
 @Data
-@ToString
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +16,10 @@ public class Company {
     @Column(name = "company_Name")
     private String name;
     private int age;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "president_id")
     private President president;
-    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "company")
     private List<Course> course;
 
 
@@ -29,5 +29,16 @@ public class Company {
     public Company(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+               "id=" + id +
+               ", name='" + name + '\'' +
+               ", age=" + age +
+//               ", president=" + president +
+               ", course=" + course +
+               '}';
     }
 }

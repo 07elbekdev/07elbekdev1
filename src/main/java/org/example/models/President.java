@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "president")
 @Data
-@ToString
 public class President {
 
     @Id
@@ -18,15 +17,23 @@ public class President {
     private String name;
     private int age;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "president",cascade = CascadeType.ALL)
     private Company company;
 
     public President() {
     }
 
-    public President(Long id, String name, int age) {
-        this.id = id;
+    public President(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "President{" +
+               "id=" + id +
+               ", name='" + name + '\'' +
+               ", age=" + age +
+               '}';
     }
 }

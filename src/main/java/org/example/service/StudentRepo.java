@@ -8,4 +8,6 @@ public interface StudentRepo {
     Student getById(Long id);
 
     void findAll();
+
+    void deleteBId(Long id);
 }

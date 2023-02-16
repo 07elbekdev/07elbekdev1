@@ -23,6 +23,7 @@ public class Course {
     private String employeeName;
     private int employeeAge;
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "company_id")
     private Company company;
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "course")
     private List<Student> student;
@@ -35,7 +36,5 @@ public class Course {
         this.directorAge = directorAge;
         this.employeeName = employeeName;
         this.employeeAge = employeeAge;
-//        this.company = company;
-//        this.student = student;
     }
 }
