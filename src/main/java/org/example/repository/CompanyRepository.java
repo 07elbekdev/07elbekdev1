@@ -29,11 +29,31 @@ public class CompanyRepository {
         }
     }
 
+    public void deleteById(Long id) {
+        try (Session session = sessionfactory.openSession()) {
+            session.beginTransaction();
+            Company company = getById(id);
+            session.delete(company);
+            session.getTransaction().commit();
+        }
+    }
+
     public void deleteAll() {
         try (Session session = sessionfactory.openSession()) {
             session.beginTransaction();
-            session.createQuery("delete from Company p").executeUpdate();
-            session.getTransaction().commit();
+
+            session.createQuery("delete from Company where id is not null")
+                    .executeUpdate();
+
+            session.createQuery("delete from Company").executeUpdate();
+
+            session.getTransaction();
+
+        } catch (Exception e) {
+            if (sessionfactory != null) {
+                sessionfactory.isClosed();
+            }
+            e.printStackTrace();
         }
     }
 }

@@ -29,6 +29,15 @@ public class PresidentRepository {
         }
     }
 
+    public void deleteById(Long id) {
+        try (Session session = sessionfactory.openSession()) {
+            session.beginTransaction();
+            President president = getById(id);
+            session.delete(president);
+            session.getTransaction().commit();
+        }
+    }
+
     public void deleteAll() {
         try (Session session = sessionfactory.openSession()) {
             session.beginTransaction();

@@ -16,7 +16,8 @@ public class Student {
     private String name;
     private int age;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "course_id")
     private Course course;
 
     public Student() {

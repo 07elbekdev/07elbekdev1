@@ -20,6 +20,15 @@ public class StudentRepository {
         }
     }
 
+    public void deleteById(Long id) {
+        try (Session session = sessionfactory.openSession()) {
+            session.beginTransaction();
+            Student student = getById(id);
+            session.delete(student);
+            session.getTransaction().commit();
+        }
+    }
+
     public void findAll() {
         try (Session session = sessionfactory.openSession()) {
             session.createQuery("select p from Student p").getResultList();

@@ -16,7 +16,7 @@ public class Configuration {
                 .setProperty(Environment.URL, "jdbc:postgresql://localhost:5432/postgres")
                 .setProperty(Environment.PASS, ",sql.111217S")
                 .setProperty(Environment.USER, "postgres")
-                .setProperty(Environment.HBM2DDL_AUTO, "create")//TODO : use this method differently, first you create it, than after creating the table, you should to change it , to 'validate'.
+                .setProperty(Environment.HBM2DDL_AUTO, "update")//TODO : use this method differently, first you create it, than after creating the table, you should to change it , to 'validate'.
                 .setProperty(Environment.SHOW_SQL, "true")
                 .setProperty(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL10Dialect")
                 .addAnnotatedClass(Student.class)
