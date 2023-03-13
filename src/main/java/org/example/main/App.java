@@ -43,6 +43,6 @@ public class App {
         StudentRepository studentRepo  = new StudentRepository();
         CourseRepository courseRepository = new CourseRepository();
         CompanyRepository companyRepository = new CompanyRepository();
-        System.out.println(companyRepository.getById(11l));
+        studentRepo.deleteById(3l);
     }
 }
